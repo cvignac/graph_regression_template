@@ -1,7 +1,8 @@
 # General
 debug: False
-limit_batches: 0.05               # For testing, run on a fraction of the dataset
+limit_batches: 0.03               # For testing, run on a fraction of the dataset
 wandb: 'online'
+save_model: True
 
 # Training
 n_epochs: 20
@@ -18,7 +19,7 @@ e_hidden_mlp: 256
 e_hidden: 128
 
 # Graph transformer
-num_layers: 100
+num_layers: 2
 use_attention_v2: True               # If true, use arxiv.org/abs/2105.14491 rather than the original graph attention
 num_heads: 8                         # Should satisfy x_hidden % num_heads = 0
 dropout: 0.1                         # Dropout on the node feature dimension (all nodes are kept)
@@ -38,3 +39,7 @@ check_val_every_n_epochs: 1
 log_every_steps: 100
 project_name: 'template'
 name: 'test'
+
+hydra:
+  job:
+    chdir: True

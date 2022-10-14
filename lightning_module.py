@@ -56,6 +56,7 @@ class GraphAttentionModule(pl.LightningModule):
         # self.train_metrics.log_epoch_metrics(self.current_epoch)
 
     def on_validation_epoch_start(self) -> None:
+        print("Starting validation epoch...")
         self.val_mse.reset()
 
         # self.val_metrics.reset()
@@ -73,7 +74,7 @@ class GraphAttentionModule(pl.LightningModule):
         print(f"Epoch {self.current_epoch}: Val MSE {epoch_mse:.2f}")
 
         # Log val nll with default Lightning logger, so it can be monitored by checkpoint callback
-        self.log("val/epoch_NLL", epoch_mse)
+        self.log("val/epoch_mse", epoch_mse)
 
         if epoch_mse < self.best_val_loss:
             self.best_val_loss = epoch_mse
