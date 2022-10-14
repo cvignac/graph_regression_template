@@ -1,0 +1,6 @@
+outputs
+data
+wandb
+.idea/
+__pycache__/
+lightning_logs/

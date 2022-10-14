@@ -1,0 +1,7 @@
+torch==1.12.1
+numpy
+matplotlib
+pandas>=0.23
+hydra-core
+wandb
+torchmetrics

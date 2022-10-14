@@ -1,0 +1,40 @@
+# General
+debug: False
+limit_batches: 0.05               # For testing, run on a fraction of the dataset
+wandb: 'online'
+
+# Training
+n_epochs: 20
+lr: 0.0002
+weight_decay: 1e-8
+gradient_clipping: 0.0
+gpus: 1
+batch_size: 256
+
+# Initial MLP
+x_hidden_mlp: 512
+x_hidden: 256
+e_hidden_mlp: 256
+e_hidden: 128
+
+# Graph transformer
+num_layers: 100
+use_attention_v2: True               # If true, use arxiv.org/abs/2105.14491 rather than the original graph attention
+num_heads: 8                         # Should satisfy x_hidden % num_heads = 0
+dropout: 0.1                         # Dropout on the node feature dimension (all nodes are kept)
+layer_norm_eps: 1e-5
+
+# Pooling
+global_hidden_dim: 512
+global_dim_out: 19
+
+train_set_size: 100000
+val_set_size: 10000
+
+
+
+# Logging
+check_val_every_n_epochs: 1
+log_every_steps: 100
+project_name: 'template'
+name: 'test'
