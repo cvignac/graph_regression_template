@@ -1,6 +1,6 @@
 # General
 debug: False
-limit_batches: 0.03               # For testing, run on a fraction of the dataset
+limit_batches: null               # For testing, run on a fraction of the dataset
 wandb: 'online'
 save_model: True
 
@@ -29,10 +29,9 @@ layer_norm_eps: 1e-5
 global_hidden_dim: 512
 global_dim_out: 19
 
+# Dataset
 train_set_size: 100000
 val_set_size: 10000
-
-
 
 # Logging
 check_val_every_n_epochs: 1
